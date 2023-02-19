@@ -9,11 +9,11 @@ const Layout = ({ children, title = 'Crypto Dash' }) => {
                 <link rel='icon' href='/favicon.ico' />
             </Head>
             <header className='header'>
-                {/* <Link href='/' passHref>
+                <Link href='/' passHref>
                     <a>
-                       <div>CRYPTO DASH</div>
+                       <div className='logo'>CRYPTO DASH</div>
                     </a>
-                </Link> */}
+                </Link>
             </header>
             <main>{children}</main>
         </div>

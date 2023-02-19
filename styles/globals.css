@@ -36,6 +36,31 @@ body {
   color: #fff;
 }
 
+.coin__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+
+
+/* .coin__grid a::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+} */
+
+.container div div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #ccc;
+}
+
 /* Layout CSS */
 .layout {
   height: 100%;
@@ -45,4 +70,16 @@ body {
 .header {
   display: flex;
   justify-content: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  background-color: #031816;
+  border-radius: 50%;
+  margin: 10px;
 }
