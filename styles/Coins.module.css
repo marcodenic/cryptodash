@@ -46,6 +46,7 @@
   text-align: right;
   justify-content: center;
   width: 100%;
+  margin-bottom: 5px;
 }
 
 .coin__price {
@@ -80,4 +81,49 @@
 .green {
   color: #13c783;
   font-size: 0.2em;
+}
+
+.redbg {
+  background-color: hsla(0, 95%, 48%, 0.2);
+}
+
+.redbgchanged {
+  background-color: hsla(0, 95%, 48%, 0.7);
+  transition: background-color 10s ease;
+  animation: red-light-to-dark 2s forwards;
+}
+
+/* .redbg.dark {
+  background-color: hsla(0, 95%, 48%, 0.7);
+} */
+
+.greenbg {
+  background-color: hsla(157, 83%, 43%, 0.2);
+}
+.greenbgchanged {
+  background-color: hsla(157, 83%, 43%, 0.7);
+  transition: background-color 10s ease;
+  animation: green-light-to-dark 2s forwards;
+}
+
+/* .greenbg.dark {
+  background-color: hsla(157, 83%, 43%, 0.7);
+} */
+
+@keyframes green-light-to-dark {
+  0% {
+    background-color: hsla(157, 83%, 43%, 0.7);
+  }
+  100% {
+    background-color: hsla(157, 83%, 43%, 0.2);
+  }
+}
+
+@keyframes red-light-to-dark {
+  0% {
+    background-color: hsla(0, 95%, 48%, 0.7);
+  }
+  100% {
+    background-color: hsla(0, 95%, 48%, 0.2);
+  }
 }
