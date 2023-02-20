@@ -52,7 +52,7 @@ const Coins = ({
         </div>
 
         <div>
-          <CoinGraph data={sparkline} id={id} />
+          <CoinGraph data={sparkline} id={id} priceChange={priceChange} />
         </div>
       </div>
     </Link>

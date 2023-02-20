@@ -10,7 +10,6 @@ import {
   LineController,
   LineElement,
   Title,
-  Legend,
   Tooltip,
   Filler,
 } from "chart.js";
@@ -22,13 +21,22 @@ ChartJS.register(
   LineElement,
   LineController,
   Title,
-  Legend,
   Tooltip,
   Filler
 );
 
-const CoinGraph = ({ data, id }) => {
+const CoinGraph = ({ data, id, priceChange }) => {
   const [chart, setChart] = useState(null);
+
+  let bgColorClass;
+  let borderColorClass;
+  if (priceChange < 0) {
+    borderColorClass = "#f00606";
+    bgColorClass = "rgba(240, 6, 6, 0.2)";
+  } else if (priceChange > 0) {
+    borderColorClass = "#13c783";
+    bgColorClass = "rgba(19, 199, 131, 0.2)";
+  }
 
   useEffect(() => {
     if (data && data.price) {
@@ -41,15 +49,30 @@ const CoinGraph = ({ data, id }) => {
             {
               label: "Price",
               data: data.price,
-              borderColor: "rgba(255, 99, 132, 1)",
-              backgroundColor: "rgba(255, 99, 132, 0.2)",
-              borderWidth: 1,
+              borderColor: borderColorClass,
+              backgroundColor: bgColorClass,
+              borderWidth: 2,
+              pointRadius: 0,
+              fill: true,
             },
           ],
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            x: {
+              display: false,
+            },
+            y: {
+              display: false,
+            },
+          },
         },
       };
 
@@ -61,7 +84,7 @@ const CoinGraph = ({ data, id }) => {
     }
   }, [data]);
 
-  return <canvas id={`${id}-chart`} width="100" height="100" />;
+  return <canvas id={`${id}-chart`} width="100" height="50" />;
 };
 
 export default CoinGraph;
