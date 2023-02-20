@@ -10,9 +10,7 @@ const Layout = ({ children, title = "Crypto Dash" }) => {
       </Head>
       <header className="header">
         <Link href="/" passHref>
-          <a>
-            <div className="logo">GreenDay.io</div>
-          </a>
+          <div className="logo">GreenDay.io</div>
         </Link>
       </header>
       <main>{children}</main>
