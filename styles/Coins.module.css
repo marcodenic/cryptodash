@@ -22,6 +22,10 @@
   align-items: center;
 
   flex-direction: column;
+  border: 1px solid rgb(62 54 54);
+  border-radius: 3px;
+  margin: 1px;
+  /* box-shadow: inset 2px 2px 5px 1px rgb(0 0 0 / 80%); */
 }
 
 .coin__img {
@@ -115,7 +119,7 @@
     background-color: hsla(157, 83%, 43%, 0.7);
   }
   100% {
-    background-color: hsla(157, 83%, 43%, 0.2);
+    background-color: #001611;
   }
 }
 
@@ -124,6 +128,6 @@
     background-color: hsla(0, 95%, 48%, 0.7);
   }
   100% {
-    background-color: hsla(0, 95%, 48%, 0.2);
+    background-color: #110003;
   }
 }

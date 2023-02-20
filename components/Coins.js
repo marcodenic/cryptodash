@@ -11,28 +11,16 @@ const Coins = ({
   volume,
   image,
   priceChange,
-  hasChanged,
+  // hasChanged,
   oldPrice,
 }) => {
   let bgColorClass;
-  let tempBgColorClass;
 
-  if (hasChanged) {
-    console.log(name + "has changed. OLD:" + oldPrice + " NEW:" + price);
-  }
-
+  //quick flash of colour when price changes +/-
   if (priceChange < 0) {
-    if (hasChanged) {
-      bgColorClass = styles.redbgchanged;
-    } else {
-      bgColorClass = styles.redbg;
-    }
-  } else {
-    if (!hasChanged) {
-      bgColorClass = styles.greenbgchanged;
-    } else {
-      bgColorClass = styles.greenbg;
-    }
+    bgColorClass = styles.redbgchanged;
+  } else if (priceChange > 0) {
+    bgColorClass = styles.greenbgchanged;
   }
 
   return (
@@ -54,8 +42,17 @@ const Coins = ({
             )}
           </div>
           <div className={styles.coin__data}>
-            <p className={styles.coin__price}>${price}</p>
+            {priceChange < 0 ? (
+              <p className={(styles.coin__price, styles.red)}>{price}</p>
+            ) : priceChange > 0 ? (
+              <p className={(styles.coin__price, styles.green)}>{price}</p>
+            ) : (
+              <p className={styles.coin__price}>{price}</p>
+            )}
           </div>
+          {/* <div>
+            <p className={styles.coin__price}>${oldPrice}</p>
+          </div> */}
         </div>
       </a>
     </Link>

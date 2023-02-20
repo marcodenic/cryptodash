@@ -7,7 +7,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Inter", sans-serif;
-  background-color: #101012;
+  background-color: #222222;
 }
 
 a {
@@ -40,21 +40,6 @@ a {
   align-items: flex-start;
 }
 
-/* .coin__grid a::before {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-} */
-
-.container div div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-color: #ccc;
-}
-
 /* Layout CSS */
 .layout {
   height: 100%;
@@ -63,7 +48,7 @@ a {
 
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .logo {
@@ -71,9 +56,11 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100px;
-  width: 100px;
-  background-color: #031816;
-  border-radius: 50%;
+  font-weight: 200;
+  font-size: 0.75em;
+  box-shadow: 2px 2px 5px 1px rgb(0 0 0 / 80%);
+  background-color: #074d46;
+  border-radius: 0.3em;
+  padding: 0.2em;
   margin: 10px;
 }

@@ -1,14 +1,11 @@
 import Coins from "./Coins";
 
 const CoinList = ({ coinsData }) => {
-  let oldPrice;
-
   return (
     <>
       {/* {console.log(coinsData)} */}
       {coinsData &&
         coinsData.map((coin) => {
-          oldPrice = coin.current_price;
           return (
             <Coins
               key={coin.id}
@@ -20,8 +17,6 @@ const CoinList = ({ coinsData }) => {
               volume={coin.total_volume}
               image={coin.image}
               priceChange={coin.price_change_percentage_24h}
-              hasChanged={oldPrice !== coin.current_price}
-              oldPrice={oldPrice}
             />
           );
         })}
