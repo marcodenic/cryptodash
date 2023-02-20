@@ -4,20 +4,19 @@ import { useState, useEffect } from "react";
 import useSWR from "swr";
 
 export default function Home({ coinsData }) {
+  const API_URL =
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=true&price_change_percentage=24h";
   const [search, setSearch] = useState("");
   const {
     data: coinsApiData,
     isValidating,
     mutate,
-  } = useSWR(
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false",
-    {
-      revalidateOnFocus: false,
-      refreshWhenonline: true,
-      shouldRetryOnError: true,
-      useSuspense: true,
-    }
-  );
+  } = useSWR(API_URL, {
+    revalidateOnFocus: false,
+    refreshWhenonline: true,
+    shouldRetryOnError: true,
+    useSuspense: true,
+  });
   const [isDataLoaded, setIsDataLoaded] = useState(false);
 
   // const filteredCoins = coinsData.filter((coin) =>
@@ -32,15 +31,12 @@ export default function Home({ coinsData }) {
   // This runs when the page first loads
   useEffect(() => {
     const fetchCoinsData = async () => {
-      const response = await fetch(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h"
-      );
+      const response = await fetch(API_URL);
 
       const newData = await response.json();
 
       //log the time and data
       console.log(new Date(), newData);
-      // console.log();
       mutate(newData);
       setIsDataLoaded(true);
     };
@@ -58,17 +54,3 @@ export default function Home({ coinsData }) {
     </div>
   );
 }
-
-// export const getServerSideProps = async () => {
-//   const res = await fetch(
-//     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false"
-//   );
-
-//   const coinsData = await res.json();
-
-//   return {
-//     props: {
-//       coinsData,
-//     },
-//   };
-// };

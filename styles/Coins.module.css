@@ -25,12 +25,14 @@
   border: 1px solid rgb(62 54 54);
   border-radius: 3px;
   margin: 1px;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+
   /* box-shadow: inset 2px 2px 5px 1px rgb(0 0 0 / 80%); */
 }
 
 .coin__img {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   margin: 10px;
   border-radius: 50%;
 }
@@ -87,37 +89,33 @@
   font-size: 0.2em;
 }
 
-.redbg {
-  background-color: hsla(0, 95%, 48%, 0.2);
-}
-
 .redbgchanged {
   background-color: hsla(0, 95%, 48%, 0.7);
-  /* transition: background-color 10s ease; */
   animation: red-light-to-dark 10s forwards;
 }
 
-/* .redbg.dark {
-  background-color: hsla(0, 95%, 48%, 0.7);
-} */
-
-.greenbg {
-  background-color: hsla(157, 83%, 43%, 0.2);
-}
 .greenbgchanged {
   background-color: hsla(157, 83%, 43%, 0.7);
-  /* transition: background-color 10s ease; */
   animation: green-light-to-dark 10s forwards;
 }
-
-/* .greenbg.dark {
-  background-color: hsla(157, 83%, 43%, 0.7);
-} */
 
 @keyframes green-light-to-dark {
   0% {
     background-color: hsla(157, 83%, 43%, 0.7);
   }
+  5% {
+    background-color: #001611;
+  }
+  10% {
+    background-color: hsla(157, 83%, 43%, 0.7);
+  }
+  15% {
+    background-color: #001611;
+  }
+  20% {
+    background-color: hsla(157, 83%, 43%, 0.7);
+  }
+
   100% {
     background-color: #001611;
   }

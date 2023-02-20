@@ -1,6 +1,7 @@
 import styles from "../styles/Coins.module.css";
 import Link from "next/link";
 import React from "react";
+// import CoinGraph from "./CoinGraph";
 
 const Coins = ({
   name,
@@ -11,7 +12,7 @@ const Coins = ({
   volume,
   image,
   priceChange,
-  // hasChanged,
+  sparkline,
   oldPrice,
 }) => {
   let bgColorClass;
@@ -50,8 +51,9 @@ const Coins = ({
               <p className={styles.coin__price}>{price}</p>
             )}
           </div>
+
           {/* <div>
-            <p className={styles.coin__price}>${oldPrice}</p>
+            <CoinGraph data={sparkline} />
           </div> */}
         </div>
       </a>
