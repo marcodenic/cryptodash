@@ -3,7 +3,6 @@ import Coins from "./Coins";
 const CoinList = ({ coinsData }) => {
   return (
     <>
-      {/* {console.log(coinsData)} */}
       {coinsData &&
         coinsData.map((coin) => {
           return (

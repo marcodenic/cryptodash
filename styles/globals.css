@@ -10,6 +10,10 @@ body {
   background-color: #222222;
 }
 
+main {
+  display: flex;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -59,7 +63,6 @@ a {
   font-weight: 200;
   font-size: 0.75em;
   box-shadow: 2px 2px 5px 1px rgb(0 0 0 / 80%);
-  background-color: #074d46;
   border-radius: 0.3em;
   padding: 0.5em 1em;
   margin: 10px;

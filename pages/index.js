@@ -19,6 +19,8 @@ export default function Home({ coinsData }) {
   });
   const [isDataLoaded, setIsDataLoaded] = useState(false);
 
+  //add search back in later, this just filters, need to actually pull the full list off coingecko and then filter.
+  // plan would be to save the desired list of favourited coins in local storage or to a cookie and then just provide that list to the API.
   // const filteredCoins = coinsData.filter((coin) =>
   //   coin.name.toLowerCase().includes(search.toLowerCase())
   // );

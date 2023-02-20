@@ -1,7 +1,5 @@
 import { React, useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
-// import Chart  from "chart.js";
-
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -47,7 +45,7 @@ const CoinGraph = ({ data, id, priceChange }) => {
           labels: data.price.map((_, index) => index + 1),
           datasets: [
             {
-              label: "Price",
+              label: "$",
               data: data.price,
               borderColor: borderColorClass,
               backgroundColor: bgColorClass,
@@ -84,7 +82,7 @@ const CoinGraph = ({ data, id, priceChange }) => {
     }
   }, [data]);
 
-  return <canvas id={`${id}-chart`} width="100" height="50" />;
+  return <canvas id={`${id}-chart`} width="75" height="50" />;
 };
 
 export default CoinGraph;
