@@ -49,10 +49,14 @@ export default function Home({ coinsData }) {
     return () => clearInterval(intervalId);
   }, []);
 
-  return (
+  return isDataLoaded ? (
     <div className="coin__grid">
       {/* <SearchBar type="text" placeholder="Search" onChange={handleChange} /> */}
       <CoinList coinsData={coinsApiData} />
+    </div>
+  ) : (
+    <div className="loader-container">
+      <span className="loader"></span>
     </div>
   );
 }

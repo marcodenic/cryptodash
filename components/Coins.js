@@ -33,21 +33,21 @@ const Coins = ({
           <p className={styles.coin__symbol}>{symbol}</p>
           {priceChange < 0 ? (
             <p className={(styles.coin__percent, styles.red)}>
-              {priceChange.toFixed(2)}
+              {priceChange.toFixed(2)}%
             </p>
           ) : (
             <p className={(styles.coin__percent, styles.green)}>
-              {priceChange.toFixed(2)}
+              {priceChange.toFixed(2)}%
             </p>
           )}
         </div>
         <div className={styles.coin__data}>
           {priceChange < 0 ? (
-            <p className={(styles.coin__price, styles.red)}>{price}</p>
+            <p className={(styles.coin__price, styles.red)}>${price}</p>
           ) : priceChange > 0 ? (
-            <p className={(styles.coin__price, styles.green)}>{price}</p>
+            <p className={(styles.coin__price, styles.green)}>${price}</p>
           ) : (
-            <p className={styles.coin__price}>{price}</p>
+            <p className={styles.coin__price}>${price}</p>
           )}
         </div>
 
